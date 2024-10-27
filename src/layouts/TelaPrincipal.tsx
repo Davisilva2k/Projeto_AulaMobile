@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Animated, ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
 import { PrincipalProps } from '../navigation/HomeNavigator';
 import HelloWorld from '../components/HelloWorld';
 
@@ -20,11 +20,13 @@ const TelaPrincipal = (props: PrincipalProps) => {
             
             <Text style={styles.cabecalho}> Farmácia </Text>
             <View style={styles.container}>
+            <Text style={styles.SubTitulo}>Clique na Opção desejada</Text>
+
                 <Pressable
                     style={styles.button}
                     onPress={() => props.navigation.navigate('CadastroCliente')}
                 >
-                    <Text style={styles.textoBotao}>Cadastrar Cliente </Text>
+                    <Text style={styles.textoBotao}>1° Cadastrar Cliente </Text>
                 </Pressable>
 
 
@@ -33,27 +35,27 @@ const TelaPrincipal = (props: PrincipalProps) => {
                     style={styles.button}
                     onPress={() => props.navigation.navigate('CadastroProdutos')}
                 >
-                    <Text style={styles.textoBotao}>Cadastrar Produto</Text>
+                    <Text style={styles.textoBotao}>2° Cadastrar Produto</Text>
                 </Pressable>
 
                 <Pressable
                     style={styles.button}
                     onPress={() => props.navigation.navigate('TelaConsProduto')}
                 >
-                    <Text style={styles.textoBotao}>Ir para a Tela Consultar Produtos</Text>
+                    <Text style={styles.textoBotao}>3° Ir para a Tela Consultar Produtos</Text>
                 </Pressable>
 
                 <Pressable
                     style={styles.button}
                     onPress={() => props.navigation.navigate('TelaDeAlteracao')}
                 >
-                    <Text style={styles.textoBotao}>Ir para a Tela de Alteracao</Text>
+                    <Text style={styles.textoBotao}>4° Ir para a Tela de Alteracao</Text>
                 </Pressable>
                 <Pressable
                     style={[styles.button, { marginTop: 20 }]}
                     onPress={() => props.navigation.navigate('LoginFuncionarioFarmacia')}
                 >
-                    <Text style={styles.botaoVoltar}>Voltar a Tela Inicial</Text>
+                    <Text style={styles.botaoVoltar}>Voltar a Tela de Login ??</Text>
                 </Pressable>
             </View>
         </ImageBackground>
@@ -69,7 +71,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         margin: 0,
-        padding: 10,
         color: 'black'
     },
     titulo1:{
@@ -78,6 +79,19 @@ const styles = StyleSheet.create({
         fontSize: 35,
         backgroundColor: 'blue',
         marginTop: 20
+    },
+    SubTitulo:{
+        color: 'purple',
+        textAlign: 'center',
+        fontSize: 35,
+        backgroundColor: 'black',
+        borderColor:'red',
+        borderWidth: 5,
+        marginTop: -10,
+        margin: -11,
+        padding: 5,
+        paddingHorizontal: 100,
+        fontWeight: 'bold'
     },
     container: {
         fontSize: 70,
@@ -90,9 +104,15 @@ const styles = StyleSheet.create({
         marginTop: 60
     },
     button: {
-        backgroundColor: 'cyan',
-        marginVertical: 10,
-        margin: -10,
+        borderWidth: 5, // Grossura das bordas da caixa de texto
+        borderColor: 'cyan',
+        justifyContent: 'center',
+        backgroundColor: 'green',
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        margin: 13,
+        borderRadius: 30,
+        alignItems: 'center'
     },
     textoBotao: {
         color: 'black',

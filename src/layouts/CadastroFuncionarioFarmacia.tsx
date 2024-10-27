@@ -90,7 +90,6 @@ const CadastroFarmacia = (props: CadFarmaciaProps) => {
                     onPress={() => { Cadastrar() }}
                 >
                     {/* TITULO DO BOTÃO DE SALVAR CADASTRO DO FUNCIONARIO  */}
-
                     <Text style={styles.desc_botao}>Salvar cadastro</Text>
                 </Pressable>
 
@@ -98,8 +97,8 @@ const CadastroFarmacia = (props: CadFarmaciaProps) => {
                     style={styles.botao}
                     onPress={() => { props.navigation.navigate("LoginFuncionarioFarmacia") }}>
 
-                        {/* TIUTLO DO BOTÃO VOLTAR PARA A TELA DE LOGIN DO FUNCIONARIO  */}
-                    <Text style={{ fontSize: 40 }}>voltar</Text>
+                    {/* TIUTLO DO BOTÃO VOLTAR PARA A TELA DE LOGIN DO FUNCIONARIO  */}
+                    <Text style={styles.botao}>voltar</Text>
                 </Pressable>
             </ImageBackground>
 
@@ -108,53 +107,75 @@ const CadastroFarmacia = (props: CadFarmaciaProps) => {
 }
 const styles = StyleSheet.create({
     container: {
-        flex: 1, // AJUDA A TELA A NÃO FICAR BAGUNÇADA
+        flex: 1, // Ajuda a tela a não ficar bagunçada
     },
     container_Nome: {
-        flex: 2, // ARRUMA OS TITULOS DAS CAIXA DE TEXTOS
-
+        flex: 2, // Arruma os títulos das caixas de texto
     },
     titulo_caixa_texto: {
-        fontSize: 25,  //TAMANHO DA FONTE DO TITULO  DAS CAIXA DE TEXTO
-        color: 'black', //COR DA FONTE DO TITULO DAS CAIXA DE TEXTO
-        margin: 10, //DISTANCIA DE UMA CAIXA DE TEXTO A OUTRA
+        fontSize: 40, // Tamanho da fonte do título das caixas de texto
+        color: 'black', // Cor da fonte do título das caixas de texto
+        fontWeight: 'bold',
+        margin: 70, // Distância de uma caixa de texto a outra
+        padding: 12,
     },
-    largura_70: { //ARRUMA A IMAGEM DE FUNDO 
-        width: '75%', 
-        borderRadius: 20
+    largura_70: {
+        // Arruma a imagem de fundo
+        width: '75%',
+        borderRadius: 20,
     },
-
-    imagem_200: {//ARRUMA A IMAGEM DE FUNDO 
+    imagem_200: {
+        // Arruma a imagem de fundo
         width: 190,
-        height: 190
+        height: 190,
     },
     caixa_texto: {
-        color: 'black', //COR DA FONTE DA CAIXA DE TEXTO
-        width: '75%', //LARGURA DA CAIXA DE TEXTO 
-        borderWidth: 4, //GROSSURA DAS BORDA DA CAIXA DE TEXTO
-        borderRadius: 10, //AJUDA  A DEIXAR AS BORDAR REDONDAS 
-        margin: 4, //DISTANCIA DO TITULO A CAIXA DE TEXTO
-        backgroundColor: 'white', //COR DA CAIXA DE TEXTO
-        fontSize: 24 // TAMANHO DA FONTE DA CAIXA DE TEXTO
+        color: 'black', // Cor da fonte da caixa de texto
+        width: '75%', // Largura da caixa de texto
+        borderWidth: 5, // Grossura das bordas da caixa de texto
+        borderRadius: 10, // Ajuda a deixar as bordas arredondadas
+        margin: -60, // Distância do título à caixa de texto
+        backgroundColor: 'white', // Cor da caixa de texto
+        fontSize: 22, // Tamanho da fonte da caixa de texto
+        padding: 12,
+    },
+    botaoContainer: {
+        marginTop: 10, // Adiciona espaço entre as caixas de texto e os botões
+        alignItems: 'center', // Centraliza os botões
     },
     botao: {
-        backgroundColor: 'red', //COR DOS BOTÃO
-        padding: 5, //TAMANHO DOS BOTAO
-        borderRadius: 5, // DEIXA A BORDA REDONDA DOS BOTAO
-        alignSelf: 'flex-end',  
-        marginTop: 7, //ESPACO DE UM BOTAO A OUTRO
+        justifyContent: 'center',
+        backgroundColor: 'black',
+        paddingVertical: 8,
+        marginTop: 20,
+        borderRadius: 20,
+        alignItems: 'center',
+        fontSize: 40,
+        width: '75%',
+    },
+    botaoVoltar:{
+        justifyContent: 'center',
+        backgroundColor: 'black',
+        paddingVertical: 8,
+        marginTop: 45,
+        borderRadius: 20,
+        alignItems: 'center',
+        fontSize: 40,
+        width: '75%',
     },
     desc_botao: {
-        textAlign: 'center', //DEIXA O O TEXTO DO BOTAO CENTRALIZADO
-        fontSize: 26, //TAMANHO DA FONTE DO BOTAO
-        color: 'white', //COR DAS LETRAS DO BOTAO
-        height: 30 //GROSSURA DO BOTAO VERTICALMENTE 
+        textAlign: 'center', // Deixa o texto do botão centralizado
+        fontSize: 36, // Tamanho da fonte do botão
+        color: 'white', // Cor das letras do botão
     },
     titulo4: {
-        fontSize: 40,
-        fontWeight: 'bold',
+        fontSize: 70,
+        padding: 15,
+        backgroundColor: 'gray',
+        borderRadius: 40,
         color: 'black',
-        textAlign: 'center'
+        textAlign: 'center',
+        margin: -20,
     },
 });
 export default CadastroFarmacia;

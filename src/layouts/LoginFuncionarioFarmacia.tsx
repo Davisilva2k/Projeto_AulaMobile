@@ -151,13 +151,14 @@ const LoginFarmacia = (props: LoginFarmProps) => {
 };
 const styles = StyleSheet.create({
     tituloBotao: { 
-        fontSize: 39,
+        fontSize: 39, 
         fontWeight: 'bold',
-        color: 'orange',
+        color: 'yellow',
         textAlign: 'center'
     },
     tituloCabecalho: {
         fontSize: 60,
+        borderWidth: 10,
         padding: 20,
         backgroundColor: 'lightblue',
         borderRadius: 20,
@@ -199,7 +200,7 @@ const styles = StyleSheet.create({
     },
     botao: {
         justifyContent: 'center',
-        backgroundColor: 'purple',
+        backgroundColor: 'black',
         paddingVertical: 8,
         paddingHorizontal: 20,
         marginTop: 15,

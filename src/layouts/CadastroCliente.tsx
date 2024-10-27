@@ -62,23 +62,26 @@ const CadastroClientes = (props: ClienteProps) => {
                 <Text style={styles.titulo4}>Cadastro Cliente</Text>
 
                 <View>
-                    <Text>Nome</Text>
+
+                    {/* TITULO DA CAIXA DE TEXTO */}
+                    <Text style={styles.titulo_caixa}>NOME</Text>
                     <TextInput
                         style={styles.caixa_texto2}
                         onChangeText={setNome}
                     />
 
-                    <Text>Cpf</Text>
+                    {/* TITULO DA CAIXA DE TEXTO */}
+                    <Text style={styles.titulo_caixa}>CPF</Text>
                     <TextInput
                         maxLength={14}
                         style={styles.caixa_texto2}
                         onChangeText={setCpf}
                     />
-
-                    <Text>Telefone</Text>
+                    {/* TITULO CAIXA DE TEXTO  */}
+                 <Text style={styles.titulo_caixa}>TELEFONE</Text>
                     <TextInput
                         maxLength={14}
-                        style={[styles.caixa_texto2, { width: "40%" }]}
+                        style={[styles.caixa_texto2]}
                         onChangeText={setTelefone}
                     />
 
@@ -104,17 +107,16 @@ const CadastroClientes = (props: ClienteProps) => {
         </ImageBackground>
     );
 };
-
 const styles = StyleSheet.create({
 
     caixa_texto2: {
         backgroundColor: 'white',
+        textAlign: 'center',
         fontSize: 20,
-        borderWidth: 1,
+        borderWidth: 4,
         borderRadius: 4,
         borderColor: 'black',
         alignItems: 'center',
-        margin: 3
     },
 
     botao1: {
@@ -122,6 +124,13 @@ const styles = StyleSheet.create({
         padding: 5,
         borderRadius: 5,
         marginTop: 5,
+    },
+    titulo_caixa: {
+        color: 'black',
+        fontSize: 30,
+        textAlign: 'center',
+        margin: 20,
+        marginTop: 30
     },
     container: {
 
@@ -139,10 +148,12 @@ const styles = StyleSheet.create({
         marginTop: 5,
     },
     titulo4: {
-        fontSize: 40,
-        color: 'black',
+        fontSize: 50,
+        borderWidth: 5,
+        borderColor: 'purple',
+        color: 'red',
         fontWeight: 'bold',
-        backgroundColor: 'white',
+        backgroundColor: 'black',
         textAlign: 'center'
 
 
