@@ -1,5 +1,4 @@
-import { Alert, Image, ImageBackground, Pressable, ScrollView, Text, TextInput, View } from "react-native";
-import { styles } from "../styles/styles";
+import { Alert, Image, ImageBackground, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import ExercicioNota from "../components/ExercicioNota";
 import { useState } from "react";
 import { LoginFarmProps, LoginProps } from "../navigation/HomeNavigator";
@@ -14,13 +13,13 @@ const LoginFarmacia = (props: LoginFarmProps) => {
 
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
-    
+
     function logar() {
         if (verificarCampos()) {
             auth()
                 .signInWithEmailAndPassword(email, senha)
                 .then(() => {
-                    props.navigation.navigate('CadastroCliente')
+                    props.navigation.navigate('TelaPrincipal')
                 })
                 .catch((erro) => tratarErros(String(erro)))
 
@@ -38,7 +37,6 @@ const LoginFarmacia = (props: LoginFarmProps) => {
         }
         return true
     }
-
     function tratarErros(erro: string) {
         console.log(erro);
 
@@ -78,52 +76,54 @@ const LoginFarmacia = (props: LoginFarmProps) => {
             style={{ flex: 1 }}
         >
             <ScrollView>
-                <Text style={styles.titulo4}>Seja bem Vindo</Text>
+                <Text style={styles.tituloCabecalho}>Seja bem Vindo</Text>
 
                 <View style={styles.container}>
-                    <Text>Seja Bem Vindo</Text>
 
                     <Image
                         source={require('..//images/heart\.png')}
                         style={styles.imagem_200}
                     />
 
-                    <Text style={styles.titulo5}>Digite o Login</Text>
+                    <Text style={styles.titulo5}> EMAIL</Text>
                     <TextInput
                         style={[styles.caixa_texto4, styles.largura_70]}
                         onChangeText={(text) => { setEmail(text) }}
-                        placeholder="Digite seu login"
-                        placeholderTextColor="#888"
-
-
+                        placeholder="Digite seu Email"
+                        placeholderTextColor="red"
 
 
                     />
-
-                    <Text style={styles.titulo5}>Digite a Senha</Text>
+                    <Text style={styles.titulo5}>SENHA</Text>
                     <TextInput
                         style={[styles.caixa_texto4, styles.largura_70]}
                         onChangeText={(text) => { setSenha(text) }}
-                        placeholder="Digite seu login"
-                        placeholderTextColor="#888"
+                        placeholder="Digite sua Senha"
+                        placeholderTextColor="red"
 
-                    />             
+                    />
+
+                        {/* BOTAO DE ENTRAR */}
 
                     <View style={styles.botoesContainer}>
                         <Pressable style={(state) => [styles.botao, state.pressed ? { opacity: 0.5 } : null]}
                             onPress={() => { logar() }}>
 
-                            <Text style={styles.titulo3}> Entrar </Text>
+                            <Text style={styles.tituloBotao}> Entrar </Text>
                         </Pressable>
+
+                        {/* BOTAO DE CADASTRAR  */}
 
                         <Pressable style={(state) => [styles.botao, state.pressed ? { opacity: 0.5 } : null]}
                             onPress={() => { props.navigation.navigate('CadastroFarmacia'); }}>
-                            <Text style={styles.titulo3}> Cadastrar </Text>
+                            <Text style={styles.tituloBotao}> Cadastrar-se </Text>
                         </Pressable>
 
-                        <Pressable style={(state) => [styles.botao, state.pressed ? { opacity: 0.5 } : null]}
+                        {/* BOTAO DE REDEFINIR SENHA */}
+
+                        <Pressable style={(state) => [styles.botao, state.pressed ? { opacity: 0.8 } : null]}
                             onPress={() => { redefinirSenha() }}>
-                            <Text style={styles.titulo3}>Esqueceu a Senha?</Text>
+                            <Text style={styles.tituloBotao}>Esqueceu a Senha? </Text>
 
                         </Pressable>
 
@@ -132,7 +132,6 @@ const LoginFarmacia = (props: LoginFarmProps) => {
                 </View>
 
                 <View style={{ flex: 1, justifyContent: 'flex-end', alignItems: 'center', paddingBottom: 20 }}>
-                    <Text style={styles.titulo2}>Todos direitos à Alex.Silva e Davi.Graff</Text>
                 </View>
 
 
@@ -144,5 +143,73 @@ const LoginFarmacia = (props: LoginFarmProps) => {
 
     );
 };
+const styles = StyleSheet.create({
+    tituloBotao: {
+        fontSize: 39,
+        fontWeight: 'bold',
+        color: 'orange',
+        textAlign: 'center'
+    },
+    tituloCabecalho: {
+        fontSize: 60,
+        padding: 20,
+        backgroundColor: 'lightblue',
+        borderRadius: 20,
+        fontWeight: 'bold',
+        color: 'brown',
+        textAlign: 'center',
+        margin: 15
+    },
+    largura_70: {
+        width: '75%',
+        borderRadius: 20
+    },
 
+    imagem_200: {
+        width: 190,
+        height: 190
+    },
+    botoesContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 10,
+    },
+    container: {
+        alignItems: 'center',
+        textAlign: 'center'
+    },
+
+    titulo5: {
+        fontSize: 35,
+        fontWeight: 'bold',
+        alignItems: 'center',
+        color: 'black',
+    },
+    titulo6: {
+        fontSize: 10,
+        fontWeight: 'bold',
+        color: 'white'
+    },
+    botao: {
+        justifyContent: 'center',
+        backgroundColor: 'purple',
+        paddingVertical: 8,
+        paddingHorizontal: 20,
+        marginTop: 15,
+        borderRadius: 20,
+        alignItems: 'center'
+    },
+    caixa_texto4: {
+        color: 'black',
+        fontSize: 20,
+        borderWidth: 2,
+        borderRadius: 4,
+        fontWeight: 'bold',
+        borderColor: 'black',
+        alignItems: 'center',
+        margin: 5,
+        backgroundColor: 'white',
+    },
+});
 export default LoginFarmacia;
