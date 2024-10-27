@@ -1,7 +1,7 @@
 import { Alert, Image, ImageBackground, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import ExercicioNota from "../components/ExercicioNota";
 import { useState } from "react";
-import { LoginFarmProps, LoginProps } from "../navigation/HomeNavigator";
+import HomeNavigator, { LoginFarmProps, LoginProps } from "../navigation/HomeNavigator";
 import auth from "@react-native-firebase/auth"
 
 const LoginFarmacia = (props: LoginFarmProps) => {
@@ -76,34 +76,43 @@ const LoginFarmacia = (props: LoginFarmProps) => {
             style={{ flex: 1 }}
         >
             <ScrollView>
-                <Text style={styles.tituloCabecalho}>Seja bem Vindo</Text>
+
+                {/* TITULO DO CABEÇALHO  */}
+                <Text style={styles.tituloCabecalho}>Seja Bem Vindo</Text>
 
                 <View style={styles.container}>
 
+                    {/* IMAGEM ABAIXO DO CABEÇALHO (CORAÇÃO) */}
                     <Image
                         source={require('..//images/heart\.png')}
                         style={styles.imagem_200}
                     />
 
+                    {/* TITULO DO CAMPO DE TEXTO DE EMAIL */}
                     <Text style={styles.titulo5}> EMAIL</Text>
+
+                    {/* CAMPO DE TEXTO DE EMAIL */}
                     <TextInput
                         style={[styles.caixa_texto4, styles.largura_70]}
                         onChangeText={(text) => { setEmail(text) }}
                         placeholder="Digite seu Email"
-                        placeholderTextColor="red"
-
+                        placeholderTextColor="black"
 
                     />
+
+                    {/* TITULO DO CAMPO DE TEXTO SENHA */}
                     <Text style={styles.titulo5}>SENHA</Text>
+
+                    {/* CAMPO DE TEXTO DE SENHA */}
                     <TextInput
                         style={[styles.caixa_texto4, styles.largura_70]}
                         onChangeText={(text) => { setSenha(text) }}
                         placeholder="Digite sua Senha"
-                        placeholderTextColor="red"
+                        placeholderTextColor="black"
 
                     />
 
-                        {/* BOTAO DE ENTRAR */}
+                    {/* BOTAO DE ENTRAR */}
 
                     <View style={styles.botoesContainer}>
                         <Pressable style={(state) => [styles.botao, state.pressed ? { opacity: 0.5 } : null]}
@@ -115,7 +124,7 @@ const LoginFarmacia = (props: LoginFarmProps) => {
                         {/* BOTAO DE CADASTRAR  */}
 
                         <Pressable style={(state) => [styles.botao, state.pressed ? { opacity: 0.5 } : null]}
-                            onPress={() => { props.navigation.navigate('CadastroFarmacia'); }}>
+                            onPress={() => { props.navigation.navigate('CadastroFuncionarioFarmacia'); }}>
                             <Text style={styles.tituloBotao}> Cadastrar-se </Text>
                         </Pressable>
 
@@ -138,13 +147,10 @@ const LoginFarmacia = (props: LoginFarmProps) => {
 
             </ScrollView>
         </ImageBackground>
-
-
-
     );
 };
 const styles = StyleSheet.create({
-    tituloBotao: {
+    tituloBotao: { 
         fontSize: 39,
         fontWeight: 'bold',
         color: 'orange',
@@ -212,4 +218,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
     },
 });
-export default LoginFarmacia;
+
+// EXPORTAÇAÕ PARA O HomeNavigator
+export default LoginFarmacia; 

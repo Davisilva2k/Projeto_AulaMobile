@@ -11,57 +11,57 @@ import ExemploConstrucaoCondicao from '../components/ExemploConstrucaoCondicao';
 import { useNavigation } from '@react-navigation/native';
 
 const TelaPrincipal = (props: PrincipalProps) => {
-    
+
     return (
         <ImageBackground
-        source={require('..//images/LoginFarmacia.jpg')}
-        style={{ flex: 1 }}
-    >
-
-        <Text style={styles.cabecalho}> Farmácia </Text>
-        <View style={styles.container}>
-            <Pressable 
-                style={styles.button} 
-                onPress={() => props.navigation.navigate('CadastroCliente')}
-            >
-                <Text style={styles.textoBotao}>Cadastrar Cliente </Text>
-            </Pressable>
-
+            source={require('..//images/LoginFarmacia.jpg')}
+            style={{ flex: 1 }}
+        >
             
+            <Text style={styles.cabecalho}> Farmácia </Text>
+            <View style={styles.container}>
+                <Pressable
+                    style={styles.button}
+                    onPress={() => props.navigation.navigate('CadastroCliente')}
+                >
+                    <Text style={styles.textoBotao}>Cadastrar Cliente </Text>
+                </Pressable>
 
-            <Pressable 
-                style={styles.button} 
-                onPress={() => props.navigation.navigate('CadastroProdutos')}
-            >
-                <Text style={styles.textoBotao}>Cadastrar Produto</Text>
-            </Pressable>
 
-            <Pressable 
-                style={styles.button} 
-                onPress={() => props.navigation.navigate('TelaConsProduto')}
-            >
-                <Text style={styles.textoBotao}>Ir para a Tela Consultar Produtos</Text>
-            </Pressable>
 
-            <Pressable 
-                style={styles.button} 
-                onPress={() => props.navigation.navigate('TelaDeAlteracao')}
-            >
-                <Text style={styles.textoBotao}>Ir para a Tela de Alteracao</Text>
-            </Pressable>
-            <Pressable 
-                style={[styles.button, { marginTop: 20 }]} 
-                onPress={() => props.navigation.navigate('LoginFarmacia')}
-            >
-                <Text style={styles.botaoVoltar}>Voltar a Tela Inicial</Text>
-            </Pressable>
-        </View>
+                <Pressable
+                    style={styles.button}
+                    onPress={() => props.navigation.navigate('CadastroProdutos')}
+                >
+                    <Text style={styles.textoBotao}>Cadastrar Produto</Text>
+                </Pressable>
+
+                <Pressable
+                    style={styles.button}
+                    onPress={() => props.navigation.navigate('TelaConsProduto')}
+                >
+                    <Text style={styles.textoBotao}>Ir para a Tela Consultar Produtos</Text>
+                </Pressable>
+
+                <Pressable
+                    style={styles.button}
+                    onPress={() => props.navigation.navigate('TelaDeAlteracao')}
+                >
+                    <Text style={styles.textoBotao}>Ir para a Tela de Alteracao</Text>
+                </Pressable>
+                <Pressable
+                    style={[styles.button, { marginTop: 20 }]}
+                    onPress={() => props.navigation.navigate('LoginFuncionarioFarmacia')}
+                >
+                    <Text style={styles.botaoVoltar}>Voltar a Tela Inicial</Text>
+                </Pressable>
+            </View>
         </ImageBackground>
     );
 }
 
 const styles = StyleSheet.create({
-    cabecalho:{
+    cabecalho: {
         backgroundColor: 'brown',
         fontSize: 100,
         textAlign: 'center',
@@ -72,34 +72,40 @@ const styles = StyleSheet.create({
         padding: 10,
         color: 'black'
     },
+    titulo1:{
+        color: 'black',
+        textAlign: 'center',
+        fontSize: 35,
+        backgroundColor: 'blue',
+        marginTop: 20
+    },
     container: {
         fontSize: 70,
         padding: 10,
-        backgroundColor: 'lightblue',
-        borderRadius: 20,
+        backgroundColor: 'red',
         fontWeight: 'bold',
         color: 'brown',
         textAlign: 'center',
         margin: 0,
-        marginTop: 210
+        marginTop: 60
     },
     button: {
-        backgroundColor: '#007BFF',
-        padding: 15,
-        borderRadius: 10,
-        margin: 20,
+        backgroundColor: 'cyan',
+        marginVertical: 10,
+        margin: -10,
     },
     textoBotao: {
-        color: '#FFFFFF',
+        color: 'black',
+        fontWeight: 'bold',
         fontSize: 30,
         textAlign: 'center'
     },
-    botaoVoltar:{
-        color: '#FFFFFF',
+    botaoVoltar: {
+        color: 'black',
         fontSize: 30,
-        textAlign: 'center'
-        
+        borderRadius: 10,
+        textAlign: 'center',
+        fontWeight: 'bold',
     }
 });
-
 export default TelaPrincipal;

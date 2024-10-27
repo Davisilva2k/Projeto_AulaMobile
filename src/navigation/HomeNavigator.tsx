@@ -11,8 +11,8 @@ import TelaCadastroProduto from "../layouts/TelaCadProdutos";
 import TelaCadProdutos from "../layouts/TelaCadProdutos";
 import TelaConsProduto from "../layouts/TelaConsProduto";
 import TelaDeAlteracao from "../layouts/TelaDeAlteracao";
-import LoginFarmacia from "../layouts/LoginFarmacia";
-import CadastroFarmacia from "../layouts/CadastroFarmacia";
+import LoginFuncionarioFarmacia from "../layouts/LoginFuncionarioFarmacia";
+import CadastroFuncionarioFarmacia from "../layouts/CadastroFuncionarioFarmacia";
 import CadastroProdutos from "../layouts/CadastroProduto";
 import cadastroVendas from "../layouts/CadastroVendas";
 import CadastroClientes from "../layouts/CadastroCliente";
@@ -30,8 +30,8 @@ type RootStackParamList = {
     TelaCadProdutos: undefined;
     TelaConsProduto: undefined;
     TelaDeAlteracao: undefined;
-    CadastroFarmacia: undefined;
-    LoginFarmacia: undefined;
+    CadastroFuncionarioFarmacia: undefined;
+    LoginFuncionarioFarmacia: undefined;
     CadastroProdutos: undefined;
     cadastroVendas: undefined;
     CadastroCliente: undefined;
@@ -42,7 +42,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 const HomeNavigator = () => {
     return (
         <Stack.Navigator
-            initialRouteName="TelaPrincipal"
+            initialRouteName="LoginFuncionarioFarmacia"
             screenOptions={{ headerShown: false }}>
             <Stack.Screen name="TelaPrincipal" component={TelaPrincipal} />
             <Stack.Screen name="TelaLogin" component={TelaLogin} />
@@ -54,8 +54,8 @@ const HomeNavigator = () => {
             <Stack.Screen name="TelaCadProdutos" component={TelaCadProdutos} />
             <Stack.Screen name="TelaConsProduto" component={TelaConsProduto} />
             <Stack.Screen name="TelaDeAlteracao" component={TelaDeAlteracao} />
-            <Stack.Screen name="CadastroFarmacia" component={CadastroFarmacia} />
-            <Stack.Screen name="LoginFarmacia" component={LoginFarmacia} />
+            <Stack.Screen name="CadastroFuncionarioFarmacia" component={CadastroFuncionarioFarmacia} />
+            <Stack.Screen name="LoginFuncionarioFarmacia" component={LoginFuncionarioFarmacia} />
             <Stack.Screen name="CadastroProdutos" component={CadastroProdutos} />
             <Stack.Screen name="cadastroVendas" component={cadastroVendas} />
             <Stack.Screen name="CadastroCliente" component={CadastroClientes} />
@@ -97,10 +97,10 @@ type ConsProdutoProps = NativeStackScreenProps<RootStackParamList,
 type AlteracaoProps = NativeStackScreenProps<RootStackParamList,
     'TelaDeAlteracao'>;
 type CadFarmaciaProps = NativeStackScreenProps<RootStackParamList,
-    'CadastroFarmacia'>;
+    'CadastroFuncionarioFarmacia'>;
 
     type LoginFarmProps = NativeStackScreenProps<RootStackParamList,
-    'LoginFarmacia'>;
+    'LoginFuncionarioFarmacia'>;
 
     type CadProdProps = NativeStackScreenProps<RootStackParamList,
     'CadastroProdutos'>;
