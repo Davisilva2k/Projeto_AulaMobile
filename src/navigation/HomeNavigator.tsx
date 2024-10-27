@@ -59,9 +59,6 @@ const HomeNavigator = () => {
             <Stack.Screen name="CadastroProdutos" component={CadastroProdutos} />
             <Stack.Screen name="cadastroVendas" component={cadastroVendas} />
             <Stack.Screen name="CadastroCliente" component={CadastroClientes} />
-
-
-
         </Stack.Navigator>
 
     );
