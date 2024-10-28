@@ -86,7 +86,7 @@ const CadastroFarmacia = (props: CadFarmaciaProps) => {
                 </View>
 
                 <Pressable
-                    style={(state) => [styles.botao, state.pressed ? { opacity: 0.5 } : null]}
+                    style={(state) => [styles.botao, state.pressed ? { opacity: 0.5 } : null ,]}
                     onPress={() => { Cadastrar() }}
                 >
                     {/* TITULO DO BOTÃO DE SALVAR CADASTRO DO FUNCIONARIO  */}
@@ -167,6 +167,7 @@ const styles = StyleSheet.create({
         textAlign: 'center', // Deixa o texto do botão centralizado
         fontSize: 36, // Tamanho da fonte do botão
         color: 'white', // Cor das letras do botão
+        width: 200
     },
     titulo4: {
         fontSize: 70,

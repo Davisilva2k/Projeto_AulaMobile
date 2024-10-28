@@ -16,6 +16,8 @@ import CadastroFuncionarioFarmacia from "../layouts/CadastroFuncionarioFarmacia"
 import CadastroProdutos from "../layouts/CadastroProduto";
 import cadastroVendas from "../layouts/CadastroVendas";
 import CadastroClientes from "../layouts/CadastroCliente";
+import TelaConsServico from "../layouts/TelaConsServico";
+import TelaConsCliente from "../layouts/TelaConsCliente";
 
 
 type RootStackParamList = {
@@ -35,6 +37,8 @@ type RootStackParamList = {
     CadastroProdutos: undefined;
     cadastroVendas: undefined;
     CadastroCliente: undefined;
+    TelaConsServico: undefined;
+    consCliente: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -42,7 +46,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 const HomeNavigator = () => {
     return (
         <Stack.Navigator
-            initialRouteName="TelaPrincipal"
+            initialRouteName="CadastroProdutos"
             screenOptions={{ headerShown: false }}>
             <Stack.Screen name="TelaPrincipal" component={TelaPrincipal} />
             <Stack.Screen name="TelaLogin" component={TelaLogin} />
@@ -59,6 +63,8 @@ const HomeNavigator = () => {
             <Stack.Screen name="CadastroProdutos" component={CadastroProdutos} />
             <Stack.Screen name="cadastroVendas" component={cadastroVendas} />
             <Stack.Screen name="CadastroCliente" component={CadastroClientes} />
+            <Stack.Screen name="consCliente" component={TelaConsCliente} />
+
         </Stack.Navigator>
 
     );
@@ -110,8 +116,12 @@ type CadFarmaciaProps = NativeStackScreenProps<RootStackParamList,
 
     type ClienteProps = NativeStackScreenProps<RootStackParamList,
     'CadastroCliente'>;
+    type ConsClienteProps = NativeStackScreenProps<RootStackParamList,
+    'consCliente'>;
+    
+    
 
-
+    
 
 
 
@@ -135,4 +145,5 @@ export type {
     CadProdProps,
     VendasProps,
     ClienteProps,
+    ConsClienteProps
 };

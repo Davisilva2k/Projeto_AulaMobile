@@ -3,8 +3,8 @@ import { View, Text, TextInput, Button, Alert, StyleSheet, Pressable, ImageBackg
 import { CadProdProps, ClienteProps } from '../navigation/HomeNavigator';
 import { Produtos } from '../components/type/produtos';
 import firestore from "@react-native-firebase/firestore"
-import { Cliente } from '../components/type/Cliente';
 import CadastroProdutos from './CadastroProduto';
+import { Cliente } from '../../Projeto_AulaMobile/src/components/type/Cliente';
 
 
 const CadastroClientes = (props: ClienteProps) => {
@@ -61,7 +61,7 @@ const CadastroClientes = (props: ClienteProps) => {
 
                 <Text style={styles.titulo4}>Cadastro Cliente</Text>
 
-                <View>
+                <View style ={{alignItems: 'center'}}>
 
                     {/* TITULO DA CAIXA DE TEXTO */}
                     <Text style={styles.titulo_caixa}>NOME</Text>
@@ -95,10 +95,10 @@ const CadastroClientes = (props: ClienteProps) => {
                         </Pressable>
 
                         <Pressable
-                            style={styles.button}
+                            style={styles.botao1}
                             onPress={() => props.navigation.navigate('CadastroProdutos')}
                         >
-                            <Text style={styles.buttonText}>Cadastrar Produto </Text>
+                            <Text style={styles.botao1}>Cadastrar Produto </Text>
                         </Pressable>
                     </View>
 
@@ -115,18 +115,31 @@ const styles = StyleSheet.create({
         fontSize: 20,
         borderWidth: 4,
         borderRadius: 4,
+        width: 370,
         borderColor: 'black',
         alignItems: 'center',
     },
 
-    botao1: {
-        backgroundColor: 'green',
+    botao1:{
+        backgroundColor: 'black',
+        color : 'white',
+        fontWeight: 'bold',
         padding: 5,
-        borderRadius: 5,
-        marginTop: 5,
+        borderRadius: 40,
+        marginTop: 10,
+        margin: 20,
+        fontSize: 30,
+        textAlign: 'center'
     },
     titulo_caixa: {
+        borderColor: 'green',
+        borderWidth: 3,
         color: 'black',
+        fontWeight: 'bold',
+        backgroundColor: 'salmon',
+        padding: 10,
+        width: 155,
+        borderRadius: 50,
         fontSize: 30,
         textAlign: 'center',
         margin: 20,
@@ -134,18 +147,6 @@ const styles = StyleSheet.create({
     },
     container: {
 
-    },
-    button: {
-        backgroundColor: 'green',
-        padding: 5,
-        borderRadius: 5,
-        marginTop: 5,
-    },
-    buttonText: {
-        backgroundColor: 'green',
-        padding: 5,
-        borderRadius: 5,
-        marginTop: 5,
     },
     titulo4: {
         fontSize: 50,

@@ -33,7 +33,7 @@ const CadastroProdutos = (props: CadProdProps) => {
 
     function verificarCampos() {
         if (!nome) {
-            Alert.alert("Nome em branco", "Digite um nome");
+            Alert.alert("Nome do Produto em branco", "Digite um nome");
             return false;
         }
         if (!codigo) {
@@ -62,25 +62,25 @@ const CadastroProdutos = (props: CadProdProps) => {
             style={{ flex: 1 }}
         >
 
-<Text style={styles.titulo4}>Cadastro Produto</Text>
-            <View>
-                <Text>Nome</Text>
+<Text style={styles.titulo4}>Cadastro de Medicamentos</Text>
+            <View style ={styles.container}>
+                <Text style={styles.TituloCaixaTexto}>Nome</Text>
                 <TextInput
                     style={styles.caixa_texto2}
                     onChangeText={setNome}
                 />
 
-                <Text>Código</Text>
+                <Text style={styles.TituloCaixaTexto}> Código</Text>
                 <TextInput
-                    maxLength={14}
+                    maxLength={10}
                     style={styles.caixa_texto2}
                     onChangeText={setCodigo}
                 />
 
-                <Text>Preço</Text>
+                <Text style={styles.TituloCaixaTexto}>Preço</Text>
                 <TextInput
                     maxLength={7}
-                    style={[styles.caixa_texto2, { width: "40%" }]}
+                    style={styles.caixa_texto2}
                     onChangeText={setPreco}
                 />
 
@@ -108,17 +108,26 @@ const CadastroProdutos = (props: CadProdProps) => {
 };
 
 const styles = StyleSheet.create({
-
+    container: {
+    justifyContent: 'center', // Centraliza verticalmente
+    alignItems: 'center', // Centraliza horizontalmente
+    margin: 50
+},
     caixa_texto2: {
         backgroundColor: 'white',
         fontSize: 20,
         borderWidth: 1,
+        width: 300,
         borderRadius: 4,
         borderColor: 'black',
-        alignItems: 'center',
-        margin: 3
+        margin: 5
     },
-
+    TituloCaixaTexto:{
+        fontSize: 40,
+        backgroundColor: 'orange',
+        borderRadius: 15,
+        textAlign: 'center',
+    },
     botao1: {
         backgroundColor: 'green',
         padding: 5,
