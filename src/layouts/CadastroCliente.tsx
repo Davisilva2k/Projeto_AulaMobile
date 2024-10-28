@@ -4,7 +4,7 @@ import { CadProdProps, ClienteProps } from '../navigation/HomeNavigator';
 import { Produtos } from '../components/type/produtos';
 import firestore from "@react-native-firebase/firestore"
 import CadastroProdutos from './CadastroProduto';
-import { Cliente } from '../../Projeto_AulaMobile/src/components/type/Cliente';
+import { Clientes } from '../components/type/Cliente';
 
 
 const CadastroClientes = (props: ClienteProps) => {
@@ -20,7 +20,7 @@ const CadastroClientes = (props: ClienteProps) => {
                 nome,
                 cpf,
                 telefone,
-            } as Cliente;
+            } as Clientes;
 
             firestore() // Aqui chamo o banco e add o produto.
                 .collection('produtos')

@@ -121,9 +121,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     card: {
-        borderWidth: 2,
-        borderColor: 'black',
-        borderRadius: 15,
+        borderWidth: 5,
+        borderColor: 'red',
+        borderRadius: 10,
         marginVertical: 5,
         marginHorizontal: 5,
         backgroundColor: 'white',
